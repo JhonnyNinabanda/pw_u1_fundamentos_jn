@@ -1,0 +1,29 @@
+h1{
+    color: rebeccapurple;
+    background-color: lawngreen;
+    width: 800;
+    height: 90;
+}
+
+h2{
+    color: rgb(165, 115, 55);
+    background-color: lightblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid black;
+}
+
+p{
+    color: darkred;
+    background-color: lightgray;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
