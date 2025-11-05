@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <script>
+        // Cambiar color del texto
+        function cambiarColor(id_elemento, color) {
+            document.getElementById(id_elemento).style.color = color;
+        }
+
+        // Cambiar tamaño de fuente
+        function cambiarTamanio(id_elemento, tamaño) {
+            document.getElementById(id_elemento).style.fontSize = tamaño;
+        }
+
+        // Agregar texto o elemento dentro de un div
+        function agregarElemento(elementoPadre, html) {
+            document.getElementById(elementoPadre).innerHTML = html;
+        }
+
+        // Crear el título dinámicamente
+        function construirH1() {
+            return '<h1 id="id_calculadora">Calculadora</h1>';
+        }
+
+        // Ocultar, mostrar y eliminar elementos
+        function eliminarElemento(id_elemento) {
+            document.getElementById(id_elemento).remove();
+        }
+        function ocultarElemento(id_elemento) {
+            document.getElementById(id_elemento).style.display = 'none';
+        }
+        function mostrarElemento(id_elemento) {
+            document.getElementById(id_elemento).style.display = 'block';
+        }
+
+        // FUNCIONES DE CALCULADORA
+        function obtenerNumero(id) {
+            let valor = document.getElementById(id).value;
+            return valor === "" ? 0 : parseFloat(valor);
+        }
+
+        function evaluarOperacion(tipo) {
+            let num1 = obtenerNumero('id_n1');
+            let num2 = obtenerNumero('id_n2');
+            let resultado = 0;
+
+            if (tipo === '+') resultado = num1 + num2;
+            if (tipo === '-') resultado = num1 - num2;
+            if (tipo === '*') resultado = num1 * num2;
+            if (tipo === '/') {
+                if (num2 === 0) {
+                    alert("No se puede dividir entre 0");
+                    resultado = "Error";
+                } else {
+                    resultado = num1 / num2;
+                }
+            }
+
+            document.getElementById('id_resultado').innerText = "Resultado: " + resultado;
+        }
+    </script>
+</head>
+
+<body>
+    <section style="margin-top: 40px;">
+        <!-- Título dinámico -->
+        <div id="id_div"></div>
+        <button onclick="agregarElemento('id_div', construirH1())">Mostrar título</button>
+        <button onclick="cambiarColor('id_calculadora','blue')">Color título</button>
+
+        <hr>
+
+        <!-- Entradas -->
+        <label id="id_label_1" for="id_n1">Número 1:</label>
+        <input id="id_n1" type="number" placeholder="Ingresa un número">
+
+        <label id="id_label_2" for="id_n2">Número 2:</label>
+        <input id="id_n2" type="number" placeholder="Ingresa otro número">
+
+        <hr>
+
+        <!-- Botones de operaciones -->
+        <button onclick="evaluarOperacion('+')">+ Sumar</button>
+        <button onclick="evaluarOperacion('-')">- Restar</button>
+        <button onclick="evaluarOperacion('*')">* Multiplicar</button>
+        <button onclick="evaluarOperacion('/')">/ Dividir</button>
+
+        <hr>
+
+        <!-- Resultado -->
+        <h2 id="id_resultado">Resultado: </h2>
+
+        <hr>
+
+        <!-- Botones de estilo -->
+        <button onclick="cambiarColor('id_label_1','green')">Color Label 1</button>
+        <button onclick="cambiarTamanio('id_label_2','25px')">Tamaño Label 2</button>
+        <button onclick="ocultarElemento('id_label_2')">Ocultar Label 2</button>
+        <button onclick="mostrarElemento('id_label_2')">Mostrar Label 2</button>
+    </section>
+</body>
+</html>
