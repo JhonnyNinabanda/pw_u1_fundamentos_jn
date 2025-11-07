@@ -186,3 +186,128 @@ for(let clave in profesor){
     console.log(clave);
     console.log(profesor[clave]);
 }
+// Desestructuración 
+const e1 = {
+    nombre: 'Ana',
+    apellido: 'Lopez',
+    edad: 28,
+    ecuatoriano: true,
+    genero: 'F',
+    ciudad: 'Guayaquil'
+}
+const e2 = {
+    nombre: 'Luis',
+    apellido: 'Martinez',
+    edad: 32,
+    ecuatoriano: false,
+    genero: 'M',
+    ciudad: 'Cuenca'
+}
+
+// Arreglo de objetos
+const arregloEstudiantes = [e1, e2, {   
+    nombre: 'Maria',
+    apellido: 'Gonzalez',
+    edad: 22,   
+    ecuatoriano: true,
+    genero: 'F',
+    ciudad: 'Quito' 
+}]
+console.log(arregloEstudiantes[2]); // Acceder al tercer objeto
+
+//Declaracion de Objetos dentro de otros objetos
+/*La desestructuracion es una de las formas sencillas y praticas de extraer
+valores de un objeto o arreglo y asignarlo a variables individuales*/
+
+//Desestructuración de objetos
+//Arreglos se guia por la posicion de la variable con la de los elementos
+const ar1 = [1,2,3,4,5,6.7,8,9,10]
+const [a,b,c,d,e] = ar1; // asignacion multiple
+console.log(a); //1
+console.log(e); //5
+
+const [primero,,,,,,,,ultimo] = ar1; // asignacion multiple
+console.log(primero); //1
+console.log(ultimo); //10
+imprime(ar1); // Llamada a funcion con desestructuracion
+
+// En objetos se guia por el nombre del atributo
+const e3 = {
+    nombre1: 'Carlos',   
+    apellido: 'Ramirez',
+    edad: 29,
+    ecuatoriano: false,
+    genero: 'M',
+    ciudad1: 'Manta'
+}
+// Objetos definido por el nombre del atributo
+// La variable debe coincidir con el nombre del atributo
+const { nombre1,ciudad1 } = e3;
+console.log(nombre1); // Carlos
+console.log(ciudad1); // Manta
+
+// Desestructuración directa
+const { name1, city1 } = {
+    name1: 'Sofia',
+    apellido: 'Velez',
+    edad: 26,
+    ecuatoriano: true,
+    genero: 'F',
+    city1: 'Loja'
+}
+console.log(name1); // Sofia
+console.log(city1); // Loja
+
+/* Para renombrar atributos se uiliza ":" y el nombre que se requiere
+se puede usar variables repetidas siempre que se renombre diferente*/
+const { name1: n1, genero: gen } = {
+    name1: 'Diego',
+    apellido: 'Chavez',
+    edad: 31,
+    ecuatoriano: false,
+    genero: 'M',
+    city1: 'Ambato'
+}
+console.log(n1); // Diego
+console.log(gen); // M
+
+// Objeto anidado
+const e4 = {
+    nombre2: 'Valeria',
+    apellido: 'Suarez',
+    edad: 24,
+    ecuatoriano: true,
+    genero: 'F',
+    ciudad2: 'Ibarra',
+    direccion: {
+        calle: 'Av. Siempre Viva',
+        barrio: 'Centro',
+        numero: 123
+    }
+}
+console.log(e4);// Objeto completo
+console.log(e4.direccion); // Acceder a objeto anidado
+console.log(e4.direccion.calle); // Acceder a propiedad anidada
+
+// Desestructuración de objeto en partes
+const { edad: ed, direccion } = e4;
+console.log(ed); // 24
+console.log(direccion); // Objeto direccion
+
+const { calle } = direccion;
+console.log(calle); // Av. Siempre Viva
+
+// Desestructuración en una linea de direccion un objetto dentro de otro
+const { direccion: { calle: c1, barrio} } = e4;
+console.log(c1); // Av. Siempre Viva
+console.log(barrio); // Centro
+
+/* Vale siempre desetructurar directo siempre que se sepa que es un arreglo u objeto
+    el argumento que se recibe en una funcion */
+
+    // Desestructuración en funciones
+    function imprime([a,b,c]){
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    }
