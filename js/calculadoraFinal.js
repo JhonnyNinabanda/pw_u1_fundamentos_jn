@@ -80,7 +80,7 @@ function calcularOperacion() {
             resultado = num2 !== 0 ? num1 / num2 : "Error";
             break;
         case '%':
-            // 💡 Calculamos porcentaje del número anterior
+            // Calculamos porcentaje del número anterior
             resultado = (num1 * num2) / 100;
             break;
         default:
