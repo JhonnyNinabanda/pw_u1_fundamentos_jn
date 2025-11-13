@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: greenyellow;
+}
+
+p:before {
+    content: attr(type);    /*agrega el valor del atributo type*/
+    display: block;
+    font-size: 25px;
+    color: green;
+    background: none;
+    margin-top: 40px;
+}
+
+input {
+    width: 300px;
+    border: none;
+    border-bottom: 2px solid green;
+    background: none;
+    color: green;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 3px solid darkgreen;
+}
+
+.formulario {
+    background: white;
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 10px 10px 5px grey;
+
+}
+
+button {
+    background: green;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+}
+
+.centrar_boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*header {
+    color: green;
+    border-bottom: 2px solid green;
+    font-size: 30px;
+}*/
+
+h2, header {
+    color: green;
+    border-bottom: 2px solid green;
+    font-size: 35px;
+}
