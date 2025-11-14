@@ -13,24 +13,28 @@
     <div class="container">
         <header>Universidad Central del Ecuador</header>
         <div class="formulario">
-        <nav></nav>
-        <section>
-            <form action="">
-                <h2>Registrar Nuevo Estudiante: </h2>
-                <p type="Nombre: "><input type="text"></p>
-                <p type="Apellido"><input type="text"></p>
-                <p type="Edad"><input type="number"></p>
-                <p type="Fecha de Nacimiento"><input type="date"></p>
-                <p type="Correo Electrónico"><input type="email"></p>
-                <p type="Password"><input type="password"></p>
-                <div class="centrar_boton">
-                    <button>Guardar</button>
-                </div>
-            </form>
-        </section>
-        <br>
-        <footer>Todo los derechos reservados</footer>
-    </div>
+            <nav></nav>
+            <section>
+                <form action="#">
+                    <h2>Registrar Nuevo Estudiante: </h2>
+                    <div id="id_msg_error" class="msg_error"></div>
+                    <p type="Nombre:"><input id="id_nombre" type="text"> <span id="id_error_nombre"
+                            class="error_asterisco"></span></p>
+                    <p type="Apellido"><input id="id_apellido" type="text"><span id="id_error_apellido"
+                            class="error_asterisco"></span></p>
+                    <p type="Edad"><input type="number"></p>
+                    <p type="Fecha de Nacimiento"><input type="date"></p>
+                    <p type="Correo Electrónico"><input id="id_email" type="email"><span id="id_error_email"
+                            class="error_asterisco"></span></p>
+                    <p type="Password"><input id="id_password" type="password"></p>
+                    <div class="centrar_boton">
+                        <button onclick="guardar()">Guardar</button>
+                    </div>
+                </form>
+            </section>
+            <br>
+            <footer>Todo los derechos reservados</footer>
+        </div>
 </body>
 
 </html>
