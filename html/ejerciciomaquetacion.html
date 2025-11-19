@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ejerciciomaquetacion.css">
+    <script src="../js/ejerciciomaquetacion.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header></header>
+        <div id="img"><img src="../img/Tarjeta.png" alt=""></div>
+        <div class="formulario">
+            <nav></nav>
+            <section>
+                <form action="#">
+                    <h2>PAYMENTS DETAILS</h2>
+                    <h3>Information Card</h3>
+                    <div id="id_msg_error" class="msg_error"></div>
+
+                    <p type="Cardholder Name"> <input id="id_name" type="text"><span id="id_error_nombre"
+                            class="error_asterisco"></span></p>
+
+                    <p type="Card Number"><input id="id_number" maxlength="16" type="number"><span id="id_error_carrd"
+                            class="error_asterisco"></span></p>
+
+                    <p type="Exp Date"><input id="id_date" placeholder="MM/YY" maxlength="5"
+                            pattern="(0[1-9]|1[0-2])\/\d{2}" required type="text"> <span id="id_error_date"
+                            class="error_asterisco"></span> </p>
+
+                    <p type="CVV"><input id="id_cvv" maxlength="3" type="password"> <span id="id_error_cvv"
+                            class="error_asterisco"></span></p>
+
+                    <div class="center">
+                        <button onclick="confirm()">CONFIRM</button>
+                    </div>
+
+                </form>
+            </section>
+
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>
